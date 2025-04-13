@@ -86,7 +86,7 @@ const Footer = () => {
                         </button>
                     </div>
 
-                    <div className="h-3 mt-2">
+                    <div className="md:h-3 h-8 mt-2">
                         {message.visible && (
                             <span className={`text-sm block transition-opacity duration-300 font-thin ${
                                 message.type === 'success' ? 'text-green-400' : 'text-red-500'
