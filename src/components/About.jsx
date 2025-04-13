@@ -35,9 +35,9 @@ const About = () => {
         </div>
     </div>
 
-    <div className='mt-5'>
-   <p className='mb-2 font-3xl text-black text-start underline'><b>RERA NO:</b> <span>GUJ/2435/PROJECT/8892</span></p>
-   <p className='mb-2 font-3xl text-black text-start underline'><b>GSTIN :</b> <span>GUJ1234</span></p>
+      <div className='mt-5'>
+   <p className='mb-2 font-2xl text-black text-start underline'><b>RERA NO:</b> <span>GUJ/2435/PROJECT/8892</span></p>
+   <p className='mb-2 font-2xl text-black text-start'><b>GSTIN :</b> <span>GUJ1234</span></p>
     <p className='mb-8 mt-3 max-w-lg'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
     </div>
 
