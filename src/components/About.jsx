@@ -34,15 +34,10 @@ const About = () => {
         </div>
     </div>
     <br></br>
-   <p className='mb-2 font-3xl text-black text-start mr-12 underline'><b>Rera no. 1212121212111121121</b></p>
+   <p className='mb-2 font-3xl text-black text-start mr-12 underline'><b>Rera no: GJ/2025/Residential/001234</b></p>
     <p className='mb-10 mt-2 max-w-lg'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-    
-    <button
-  className="bg-blue-600 text-white px-8 py-2 rounded self-center lg:self-start"
-  onClick={() => window.location.href = '/about-us'}
->
-  Learn more
-</button>
+             
+    <Link to="/About-us" className="bg-blue-600 text-white px-8 py-2 rounded self-center lg:self-start">Learn more</link>
 </div>
 
             </div>
