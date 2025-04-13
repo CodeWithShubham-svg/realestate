@@ -57,7 +57,8 @@ const Footer = () => {
                     <h3 className='text-white text-lg font-bold mb-4'>Company</h3>
                     <ul className='flex flex-col gap-2 text-gray-400'>
                         <Link to="/#Header" className="hover:text-white">Home</Link>
-                        <a href='/About-us' className='hover:text-white'>About Us</a>
+                        <Link to="/About-us" className="hover:text-white">About Us</Link>
+                        
                         <a href='/#Contact' className='hover:text-white'>Contact Us</a>
                         <Link to="/Tnc" className="hover:text-white">Terms & Condition</Link>
                     </ul>
