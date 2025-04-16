@@ -1,82 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { assets, projectsData } from '../assets/assets';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { motion } from 'framer-motion';
-
+import { assets, projectsData } from '../assets/assets';
 
 const Projects = () => {
-    const [cardsToShow, setCardsToShow] = useState(1);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const sliderRef = useRef(null);
-    const [isTransitioning, setIsTransitioning] = useState(true);
-
-    const updateCardsToShow = () => {
-        if (window.innerWidth >= 1024) {
-            setCardsToShow(4);
-        } else {
-            setCardsToShow(1);
-        }
-    };
-
-    useEffect(() => {
-        updateCardsToShow();
-        window.addEventListener('resize', updateCardsToShow);
-        return () => window.removeEventListener('resize', updateCardsToShow);
-    }, []);
-
-    // Generate cloned data
-    const getExtendedProjects = () => {
-        const cloneStart = projectsData.slice(-cardsToShow);
-        const cloneEnd = projectsData.slice(0, cardsToShow);
-        return [...cloneStart, ...projectsData, ...cloneEnd];
-    };
-
-    const extendedProjects = getExtendedProjects();
-
-    useEffect(() => {
-        const preloadImages = () => {
-            projectsData.forEach(project => {
-                const img = new Image();
-                img.src = project.image;
-            });
-        };
-        preloadImages();
-    }, []);
-
-    const handleTransitionEnd = () => {
-        let resetIndex = null;
-    
-        if (currentIndex >= projectsData.length + cardsToShow) {
-            resetIndex = cardsToShow;
-        } else if (currentIndex < cardsToShow) {
-            resetIndex = projectsData.length + cardsToShow - 1;
-        }
-    
-        if (resetIndex !== null) {
-            setIsTransitioning(false);
-    
-            // Wait till the DOM applies "transition: none"
-            requestAnimationFrame(() => {
-                setCurrentIndex(resetIndex);
-                requestAnimationFrame(() => {
-                    setIsTransitioning(true); // restore transition
-                });
-            });
-        }
-    };
-    
-
-    const nextProject = () => {
-        setCurrentIndex(prev => prev + 1);
-    };
-
-    const prevProject = () => {
-        setCurrentIndex(prev => prev - 1);
-    };
-
-    const totalItems = extendedProjects.length;
-    const slideWidth = 100 / totalItems;
-    const transformX = -slideWidth * currentIndex;
-
     return (
         <motion.div
             initial={{ opacity: 0, x: -200 }}
@@ -93,41 +24,56 @@ const Projects = () => {
                 Crafting Spaces, Building Legacies - Explore Our Portfolio
             </p>
 
+            {/* Buttons top-right like before */}
             <div className='flex justify-end items-center mb-8'>
-                <button onClick={prevProject} className='p-3 bg-gray-200 rounded mr-2'>
+                <button className='p-3 bg-gray-200 rounded mr-2 swiper-button-prev'>
                     <img src={assets.left_arrow} alt="left" />
                 </button>
-                <button onClick={nextProject} className='p-3 bg-gray-200 rounded'>
+                <button className='p-3 bg-gray-200 rounded swiper-button-next'>
                     <img src={assets.right_arrow} alt="right" />
                 </button>
             </div>
 
+            {/* Swiper Carousel */}
             <div className='overflow-hidden'>
-                <div
-                    ref={sliderRef}
-                    onTransitionEnd={handleTransitionEnd}
-                    className='flex gap-8 ml-3 flex-nowrap'
-                    style={{
-                        width: `${(extendedProjects.length * 100) / cardsToShow}%`,
-                        transform: `translateX(${transformX}%)`,
-                        transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none',
+                <Swiper
+                    modules={[Navigation, Pagination]}
+                    loop={true}
+                    grabCursor={true}
+                    spaceBetween={30}
+                    navigation={{
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
                     }}
+                    pagination={{
+                        el: '.swiper-pagination',
+                        clickable: true,
+                        dynamicBullets: true,
+                    }}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 4,
+                        },
+                    }}
+                    className='flex gap-8 ml-3 flex-nowrap slider-wrapper'
                 >
-                    {extendedProjects.map((project, index) => (
-                        <div
+                    {projectsData.map((project, index) => (
+                        <SwiperSlide
                             key={index}
                             className='relative md:flex-shrink-0 flex-shrink-1 transition-all duration-700 hover:scale-105'
-                            style={{
-                                width: `${100 / extendedProjects.length}%`,
-                            }}
                         >
-  <img
-  src={project.image}
-  alt={project.title}
-  loading={(index >= currentIndex - 2 && index <= currentIndex + 2) ? 'eager' : 'lazy'}
-  className='w-full h-auto mb-14'
-/>
-
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                loading='lazy'
+                                className='w-full h-auto mb-14'
+                            />
                             <div className='absolute left-0 right-0 bottom-5 flex justify-center'>
                                 <div className='inline-block bg-white w-3/4 px-4 py-2 shadow-md'>
                                     <h2 className='text-xl font-semibold text-gray-800 justify-center flex'>
@@ -135,10 +81,23 @@ const Projects = () => {
                                     </h2>
                                 </div>
                             </div>
-                        </div>
+                        </SwiperSlide>
                     ))}
-                </div>
+                </Swiper>
             </div>
+            <style>{`
+                  .swiper-button-prev, .swiper-button-next {
+            position: static;
+            width: 38px;
+            height: 40px;
+      }
+ 
+
+                .swiper-button-next:after,
+                .swiper-button-prev:after {
+                    content: none !important;
+                }
+            `}</style>
         </motion.div>
     );
 };
