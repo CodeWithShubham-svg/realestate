@@ -98,6 +98,7 @@ const Projects = () => {
                     content: none !important;
                 }
             }
+            `}</style>
         </motion.div>
     );
 };
