@@ -97,7 +97,7 @@ const Projects = () => {
                 .swiper-button-prev:after {
                     content: none !important;
                 }
-            `}</style>
+            }
         </motion.div>
     );
 };
