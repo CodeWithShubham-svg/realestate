@@ -8,6 +8,7 @@
   font-family: Outfit;
 }
 
+/* use in #contact and ct.jsx and popup form of spaces  */
 /* Remove up/down arrows from number input */
 .no-arrows::-webkit-inner-spin-button,
 .no-arrows::-webkit-outer-spin-button {
@@ -22,3 +23,37 @@
   font-weight: 600;
 }
 
+
+/* for footer subscription form loader */
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.dot-flash {
+  display: inline-block;
+  animation: blink 1.2s infinite;
+  margin-left: 2px;
+}
+
+.dot-flash.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.dot-flash.delay-2 {
+  animation-delay: 0.4s;
+}
+
+
+/* for Amentities previous and next btn */
+.swiper-button-prev, .swiper-button-next {
+            position: static;
+            width: 38px;
+            height: 40px;
+ }
+ 
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+      content: none !important;
+  }

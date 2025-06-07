@@ -1,5 +1,6 @@
 import React from 'react';
 import PrivacyNavbar from '../components/PrivacyNavbar'; // ✅ Your existing navbar
+import CallUsButton from '../components/Callbtn';
 
 const AboutUs = () => {
   return (
@@ -20,51 +21,69 @@ const AboutUs = () => {
 
       {/* ✅ Main Content */}
       <div className="max-w-6xl mx-auto py-12 px-4 sm:px-6">
-        <h2 className="text-lg sm:text-2xl font-bold mb-3 text-gray-900 px-2">
-          Lorem Ipsum Dolor Sit Amet
-        </h2>
-        <p className="mb-6 text-base sm:text-lg text-gray-700 leading-relaxed px-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum justo eu
-          bibendum cursus. Etiam vulputate facilisis orci, non feugiat tortor fermentum et.
-          Curabitur eu odio nulla. Sed iaculis lorem et ante dictum facilisis. Integer porttitor
-          justo nec nisi efficitur, in volutpat leo pretium.
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-900 px-2 underline underline-offset-4 decoration-1">Our Project</h3>
+
+            <p className="mb-6 text-base text-gray-700 leading-relaxed px-2">
+          Pellentesque vel erat eget nibh suscipit iaculis. Sed ac eros id odio tincidunt
+          hendrerit. Vestibulum at ligula lacus. Sed efficitur lectus non tellus ultricies, ac
+          volutpat nulla tempus. Vivamus congue ex sed massa efficitur rhoncus.
         </p>
 
-        <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900 px-2">Lorem Subsection Title</h3>
-        <p className="mb-6 text-base text-gray-700 leading-relaxed px-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in nisi vel nisi
-          commodo convallis. Duis dignissim viverra semper. Proin ut imperdiet ligula. Nulla quis
-          feugiat velit. Praesent id mi neque. Morbi accumsan lorem et pulvinar vehicula.
-        </p>
+{/* about company */}
+<hr className="bg-slate-600 h-[1px] border-0 my-4" />
 
-        <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900 px-2">Lorem Another Section</h3>
+          <br></br>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-900 px-2 underline underline-offset-4 decoration-1">Our Company</h3>
         <p className="mb-6 text-base text-gray-700 leading-relaxed px-2">
           Pellentesque vel erat eget nibh suscipit iaculis. Sed ac eros id odio tincidunt
           hendrerit. Vestibulum at ligula lacus. Sed efficitur lectus non tellus ultricies, ac
           volutpat nulla tempus. Vivamus congue ex sed massa efficitur rhoncus.
         </p>
 
-        <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900 px-2">Data Usage</h3>
-        <p className="mb-4 text-base text-gray-700 leading-relaxed px-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in
-          faucibus orci luctus et ultrices posuere cubilia curae; Mauris nec ipsum at velit feugiat
-          fermentum. Duis ac justo eget nulla iaculis vestibulum in non magna.
-        </p>
 
-        <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900 px-2">Lorem Subsection Title</h3>
-        <p className="mb-6 text-base text-gray-700 leading-relaxed px-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in nisi vel nisi
-          commodo convallis. Duis dignissim viverra semper. Proin ut imperdiet ligula. Nulla quis
-          feugiat velit. Praesent id mi neque. Morbi accumsan lorem et pulvinar vehicula.
-        </p>
+        {/* project documents */}
+        <hr className="bg-slate-600 h-[1px] border-0 my-4" />
 
-        <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900 px-2">Lorem Another Section</h3>
+          <br></br>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-900 px-2 underline underline-offset-4 decoration-1">Our Document</h3>
         <p className="mb-6 text-base text-gray-700 leading-relaxed px-2">
           Pellentesque vel erat eget nibh suscipit iaculis. Sed ac eros id odio tincidunt
           hendrerit. Vestibulum at ligula lacus. Sed efficitur lectus non tellus ultricies, ac
           volutpat nulla tempus. Vivamus congue ex sed massa efficitur rhoncus.
         </p>
+
+<hr className="bg-slate-600 h-[1px] border-0 my-4" />
+
+          <br></br>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-900 px-2 underline underline-offset-4 decoration-1">Our Past Projects</h3>
+        <p className="mb-6 text-base text-gray-700 leading-relaxed px-2">
+          Pellentesque vel erat eget nibh suscipit iaculis. Sed ac eros id odio tincidunt
+          hendrerit. Vestibulum at ligula lacus. Sed efficitur lectus non tellus ultricies, ac
+          volutpat nulla tempus. Vivamus congue ex sed massa efficitur rhoncus.
+        </p>
+
+<hr className="bg-slate-600 h-[1px] border-0 my-4" />
+
+          <br></br>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-900 px-2 underline underline-offset-4 decoration-1">Why Choose Us</h3>
+        <p className="mb-6 text-base text-gray-700 leading-relaxed px-2">
+          Pellentesque vel erat eget nibh suscipit iaculis. Sed ac eros id odio tincidunt
+          hendrerit. Vestibulum at ligula lacus. Sed efficitur lectus non tellus ultricies, ac
+          volutpat nulla tempus. Vivamus congue ex sed massa efficitur rhoncus.
+        </p>
+
+        <hr className="bg-slate-600 h-[1px] border-0 my-4" />
+
+          <br></br>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-900 px-2 underline underline-offset-4 decoration-1">Our Partners</h3>
+        <p className="mb-6 text-base text-gray-700 leading-relaxed px-2">
+          Pellentesque vel erat eget nibh suscipit iaculis. Sed ac eros id odio tincidunt
+          hendrerit. Vestibulum at ligula lacus. Sed efficitur lectus non tellus ultricies, ac
+          volutpat nulla tempus. Vivamus congue ex sed massa efficitur rhoncus.
+        </p>
+
       </div>
+      <CallUsButton />
     </div>
   );
 };

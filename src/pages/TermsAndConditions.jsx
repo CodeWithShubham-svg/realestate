@@ -1,5 +1,6 @@
 import React from 'react';
 import PrivacyNavbar from '../components/PrivacyNavbar'; // ✅ Your existing navbar
+import CallUsButton from '../components/Callbtn';
 
 const PrivacyPolicy = () => {
   return (
@@ -63,6 +64,7 @@ const PrivacyPolicy = () => {
           volutpat nulla tempus. Vivamus congue ex sed massa efficitur rhoncus.
         </p>
       </div>
+      <CallUsButton />
     </div>
   );
 };

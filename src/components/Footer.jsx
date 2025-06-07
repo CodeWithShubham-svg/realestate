@@ -71,7 +71,7 @@ const Footer = () => {
                     <ul className='flex flex-col gap-2 text-gray-400'>
                         <Link to="/#Header" className="hover:text-white">Home</Link>
                         <Link to="/about-us" className="hover:text-white">About us</Link>
-                        <a href='/#Contact' className='hover:text-white'>Contact Us</a>
+                        <a href='/Contact' className='hover:text-white'>Contact Us</a>
                         <Link to="/Tnc" className="hover:text-white">Terms & Condition</Link>
                     </ul>
                 </div>
@@ -98,13 +98,27 @@ const Footer = () => {
                         </button>
                     </div>
 
-                    <div className="md:h-3 h-8 mt-2">
-                        {message.visible && (
-                            <span className={`text-sm block transition-opacity duration-300 font-thin ${message.type === 'success' ? 'text-green-400' : 'text-red-500'}`}>
-                                {message.text}
-                            </span>
-                        )}
-                    </div>
+                   <div className="md:h-3 h-8 mt-2">
+  <span className={`text-sm block transition-opacity duration-300 font-light ${
+    loading
+      ? 'text-blue-500'
+      : message.type === 'success'
+      ? 'text-green-400'
+      : 'text-red-500'
+  }`}>
+    {loading ? (
+      <>
+        Sending
+        <span className="dot-flash">.</span>
+        <span className="dot-flash delay-1">.</span>
+        <span className="dot-flash delay-2">.</span>
+      </>
+    ) : (
+      message.visible && message.text
+    )}
+  </span>
+</div>
+
                 </div>
             </div>
 

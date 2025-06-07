@@ -12,6 +12,7 @@ const Contact = () => {
         setResult("Sending....");
         const formData = new FormData(event.target);
 
+        // public key of web3form
         formData.append("access_key", "a4e27c78-eb64-42b3-977d-40c3c5af385a");
 
         const response = await fetch("https://api.web3forms.com/submit", {
@@ -38,32 +39,51 @@ const Contact = () => {
             transition={{ duration: 1 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className='text-center p-6 py-20 lg:px-32 w-full overflow-hidden ' id='Contact'>
+            className='text-center p-6 pb-20 lg:px-32 w-full overflow-hidden mt-6' id='Contact'>
             <h1 className='text-2xl sm:text-4xl font-bold mb-2'>Contact <span className='underline underline-offset-4 decoration-1 under font-light'>With Us</span></h1>
-            <p className='text-center text-gray-500 mb-12 max-w-80 mx-auto'>Ready to Make a Move? Lets Build Your Future Together</p>
+            <p className='text-center text-gray-500 mb-8 max-w-80 mx-auto'>Ready to Make a Move? Lets Build Your Future Together</p>
 
             <form onSubmit={onSubmit} className='max-w-2xl mx-auto text-gray-600 pt-8'>
-                <div className='flex flex-wrap'>
-                    <div className='w-full md:w-1/2 text-left'>
-                        Your Name
-                        <input className='w-full border border-gray-300 rounded py-3 px-4 mt-3 outline-blue-600' type='text' name='Name' placeholder='Your Name' required />
-                    </div>
+  <div className='flex flex-wrap -mx-2'>
+    <div className='w-full md:w-1/2 px-2 mb-6 text-left'>
+      <label className='block font-semibold mb-2'>Your Name</label>
+      <input
+        className='w-full border border-gray-300 rounded py-3 px-4 outline-blue-600'
+        type='text'
+        name='Name'
+        placeholder='Your Name'
+        required
+      />
+    </div>
 
-                    <div className='w-full md:w-1/2 text-left md:pl-4'>
-                        Your Number
-                        <input
-        className='w-full border border-gray-300 rounded py-3 px-4 mt-3 no-arrows outline-blue-600' type='number' name='Number' placeholder='Your Number' required />                   
-         </div>
-                </div>
-                <div className='my-6 text-left'>
-                    Message
-                    <textarea className='w-full border border-gray-300 rounded py-3 px-4 mt-2 h-48 resize-none outline-blue-600' name='Message' placeholder='Message' required></textarea>
-                </div>
-                <button className='bg-blue-600 text-white py-2 px-12 mb-10 rounded'>{result ? result : "Send Message"}</button>
-            </form>
+    <div className='w-full md:w-1/2 px-2 mb-6 text-left'>
+      <label className='block font-semibold mb-2'>Your Number</label>
+      <input
+        className='w-full border border-gray-300 rounded py-3 px-4 no-arrows outline-blue-600'
+        type='number'
+        name='Number'
+        placeholder='Your Number'
+        required
+      />
+    </div>
+  </div>
+
+  <div className='mb-6 text-left'>
+    <label className='block font-semibold mb-2'>Message</label>
+    <textarea
+      className='w-full border border-gray-300 rounded py-3 px-4 h-48 resize-none outline-blue-600'
+      name='Message'
+      placeholder='Message'
+      required
+    ></textarea>
+  </div>
+
+  <button className='bg-blue-600 text-white py-2 px-12 mb-10 rounded'>
+    {result ? result : "Send Message"}
+  </button>
+</form>
+
         </motion.div>
     )
-
-
 }
 export default Contact

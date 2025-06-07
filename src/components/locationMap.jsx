@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion'
+
 
 const LocationMap = () => {
   const [isActive, setIsActive] = useState(false);
@@ -8,6 +10,13 @@ const LocationMap = () => {
   };
 
   return (
+     <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                transition={{ duration: 1.5 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                >
+
     <section className="w-[95%] mx-auto py-14 bg-white text-gray-800">
       <br></br>
       {/* Heading */}
@@ -19,7 +28,7 @@ const LocationMap = () => {
 
       <div className="flex justify-center">
   <div
-    className={`relative w-[90%] md:w-[85%] bg-white/70 backdrop-blur-md border border-gray-200 rounded overflow-hidden shadow-lg border transition hover:shadow-2xl map-container ${isActive ? 'active' : ''}`}
+    className={`relative w-[90%] md:w-[85%] bg-white/70 backdrop-blur-md border-gray-200 rounded overflow-hidden shadow-lg border transition hover:shadow-xl map-container ${isActive ? 'active' : ''}`}
     onClick={activateMap}
     onTouchStart={activateMap}
   >
@@ -44,6 +53,7 @@ const LocationMap = () => {
 
 
     </section>
+    </motion.div>
   );
 };
 
