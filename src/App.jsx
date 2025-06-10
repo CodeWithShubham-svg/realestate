@@ -19,7 +19,7 @@ import Testimonails from './components/Testimonails';
 import LocationMap from './components/locationMap';
 import ContactSection from './components/Contact'; // Renamed
 import Footer from './components/Footer';
-import NearbyLandmarks from './components/nearby';
+import NearbyLandmarks from './components/NearbyLandmarks';
 
 // extra page
 import NotFound from './pages/NotFound';
